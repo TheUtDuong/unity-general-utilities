@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 
+///<summary> DisableAfterTime will disable the gameObject after _lifeTimer has elapsed.
+/// Set the "LifeInSeconds" variable in the inspector
+/// As soon as the gameObject is enabled it will begin 
+/// to countdown and will disable itself after the time has elapsed.
+/// </summary>
 public class DisableAfterTime : MonoBehaviour
 {
-    ///<summary> DisableAfterTime will disable the gameObject after _lifeTimer has elapsed.
-    /// Set the "LifeInSeconds" variable in the inspector
-    /// As soon as the gameObject is enabled it will begin 
-    /// to countdown and will disable itself after the time has elapsed.
-    /// </summary>
+   
 
     //Set in Inspector
     public float LifeInSeconds;
