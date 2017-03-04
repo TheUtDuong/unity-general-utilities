@@ -5,35 +5,38 @@
 /// As soon as the gameObject is enabled it will begin 
 /// to countdown and will disable itself after the time has elapsed.
 /// </summary>
-public class DisableAfterTime : MonoBehaviour
+
+namespace UtUtils
 {
-   
-
-    //Set in Inspector
-    public float LifeInSeconds;
-
-    //Countdown timer
-    private float _lifeTimer;
-
-    //Property to determine if the time has elapsed
-    private bool TimeElapsed
+    public class DisableAfterTime : MonoBehaviour
     {
-        get { return _lifeTimer <= Time.time; }
-    }
+        //Set in Inspector
+        public float LifeInSeconds;
+
+        //Countdown timer
+        private float _lifeTimer;
+
+        //Property to determine if the time has elapsed
+        private bool TimeElapsed
+        {
+            get { return _lifeTimer <= Time.time; }
+        }
 
 
-    //Initialize timer once the gameObject has been enabled
-    void OnEnable()
-    {
-        _lifeTimer = Time.time + LifeInSeconds;
-    }
+        //Initialize timer once the gameObject has been enabled
+        void OnEnable()
+        {
+            _lifeTimer = Time.time + LifeInSeconds;
+        }
 
-    
-    void Update()
-    {
-        //Checks if the time has elapsed
-        if(TimeElapsed)
-            gameObject.SetActive(false); // Disable the gameobject
+
+        void Update()
+        {
+            //Checks if the time has elapsed
+            if (TimeElapsed)
+                gameObject.SetActive(false); // Disable the gameobject
+        }
+
     }
 
 }
